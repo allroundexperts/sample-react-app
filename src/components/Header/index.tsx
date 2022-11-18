@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
-import SearchInput from "../SearchInput";
+import MovieSearchBar from "../MovieSearchBar";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
           Movies
         </Typography>
       </Box>
-      <SearchInput onChange={() => {}} value={""} />
+      <MovieSearchBar />
     </Box>
   );
 };

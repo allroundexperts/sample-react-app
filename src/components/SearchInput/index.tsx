@@ -1,20 +1,15 @@
 import React from "react";
-import { InputAdornment } from "@mui/material";
+import { InputAdornment, AutocompleteRenderInputParams } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { StyledTextField } from "./style";
 
-type SearchInputProps = {
-  onChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
-  value: string;
-};
-
-const SearchInput: React.FC<SearchInputProps> = ({ onChange, value }) => {
+const SearchInput: React.FC<AutocompleteRenderInputParams> = (params) => {
   return (
     <StyledTextField
-      onChange={onChange}
-      value={value}
+      {...params}
       placeholder="Search"
       InputProps={{
+        ...params.InputProps,
         startAdornment: (
           <InputAdornment position="start">
             <SearchIcon />

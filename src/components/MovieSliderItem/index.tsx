@@ -11,7 +11,7 @@ const MovieSliderItem: React.FC<Props> = ({ movie }) => {
   const navigate = useNavigate();
   return (
     <Card
-      sx={{ width: 345, height: 345, cursor: "pointer" }}
+      sx={{ width: 345, height: 345, cursor: "pointer", marginBottom: 1.25 }}
       onClick={() => navigate(`/detail/${movie.slug}`)}
     >
       <Box sx={{ position: "relative" }}>
