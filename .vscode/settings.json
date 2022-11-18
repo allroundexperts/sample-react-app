@@ -1,0 +1,14 @@
+{
+  "eslint.alwaysShowStatus": true,
+  "npm.packageManager": "yarn",
+  "eslint.nodePath": "./node_modules",
+  "eslint.codeActionsOnSave.mode": "problems",
+  "eslint.packageManager": "yarn",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": false
+  },
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
