@@ -1,10 +1,10 @@
-import * as React from "react";
+import { useState, useEffect } from "react";
 import { camelizeKeys } from "humps";
 
 const useFetch = <T>(endpoint: string) => {
-  const [data, setData] = React.useState<T[]>([]);
-  const [loading, setLoading] = React.useState<boolean>(false);
-  const [error, setError] = React.useState<string>();
+  const [data, setData] = useState<T[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>();
 
   const fetchData = async () => {
     try {
@@ -17,6 +17,7 @@ const useFetch = <T>(endpoint: string) => {
           },
         }
       );
+      console.log(response);
       const data = await response.json();
       setData(camelizeKeys(Object.values(data)[0]) as T[]);
     } catch (e) {
@@ -26,7 +27,7 @@ const useFetch = <T>(endpoint: string) => {
     }
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetchData();
   }, [endpoint]);
 
